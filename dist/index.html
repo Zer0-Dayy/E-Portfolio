@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Mohamed Aziz Missaoui, a Computer Systems Engineering student in Tunis working on sensor electronics, firmware, and embedded prototypes.">
+  <meta name="theme-color" content="#f7f5ee">
+  <title>About | Mohamed Aziz Missaoui</title>
+  <link rel="icon" href="assets/mark.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="interactions.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">
+        <span class="wordmark-icon" aria-hidden="true">AM</span>
+        <span>Aziz Missaoui</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <a class="header-contact" href="mailto:missaouiaziz05@gmail.com"><span class="mail-symbol" aria-hidden="true"></span>Get in touch</a>
+    </div>
+  </header>
+
+  <main id="about" tabindex="-1">
+    <section class="cover" id="home" aria-labelledby="about-name">
+      <div class="wrap about-hero">
+        <div class="about-heading">
+          <p class="about-kicker"><span>About me</span><i aria-hidden="true"></i><span>Tunis, Tunisia</span></p>
+          <h1 id="about-name" class="hero-name">Mohamed Aziz <em>Missaoui</em></h1>
+        </div>
+        <div class="about-intro">
+          <p class="hero-role">Computer Systems Engineering student</p>
+          <p class="hero-intro">I study electronics, signals, and control at South Mediterranean University. I like following a signal from a sensor pin into firmware, then testing it on the bench.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="projects.html">Explore projects</a>
+            <a class="button button-quiet" href="cv.html">View CV</a>
+          </div>
+        </div>
+        <div class="portrait-mount">
+          <div class="portrait-paper">
+            <img src="assets/aziz-portrait.webp" width="1000" height="1000" alt="Portrait of Mohamed Aziz Missaoui" fetchpriority="high">
+          </div>
+          <a class="bench-note" href="projects.html#pcb-explorer">
+            <span class="bench-art" aria-hidden="true"></span>
+            <span class="bench-caption"><small>On my bench</small><strong>Hydroponics PCB</strong></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap practice" data-tabs aria-labelledby="practice-title">
+      <div class="section-heading">
+        <h2 id="practice-title">How I work</h2>
+        <div class="practice-tabs" role="tablist" data-tab-list aria-label="Areas of my work" hidden>
+          <button type="button" role="tab" id="tab-practice-circuits" aria-controls="practice-circuits">Circuit design</button>
+          <button type="button" role="tab" id="tab-practice-firmware" aria-controls="practice-firmware">Firmware</button>
+          <button type="button" role="tab" id="tab-practice-team" aria-controls="practice-team">Teamwork</button>
+        </div>
+      </div>
+      <div class="practice-stories">
+        <article class="practice-story practice-story--circuits" id="practice-circuits" aria-labelledby="tab-practice-circuits">
+          <div class="copper-table">
+            <fieldset class="copper-switch">
+              <legend class="sr-only">Hydroponics PCB copper layer, viewed from above</legend>
+              <label><input type="radio" name="copper-layer" value="front" checked><span>Front copper</span></label>
+              <label><input type="radio" name="copper-layer" value="back"><span>Back copper</span></label>
+            </fieldset>
+            <div class="copper-window" role="img" aria-label="Routed tracks, pads, and vias on the hydroponics PCB. Both layers share the same top-down view.">
+              <div class="copper-board" aria-hidden="true">
+                <span class="copper-layer copper-layer--front"></span>
+                <span class="copper-layer copper-layer--back"></span>
+              </div>
+            </div>
+            <p class="copper-caption"><span class="foil-key" aria-hidden="true"></span>PCB routing <span aria-hidden="true">/</span> viewed from above</p>
+          </div>
+          <div class="story-copy">
+            <p class="eyebrow">Hydroponics Monitoring</p>
+            <h3>Bringing seven sensors onto one board</h3>
+            <p>I designed and tested seven sensor interfaces. For the analog channels, I scaled the voltage to the ESP32-S3 input range and filtered noise before sampling.</p>
+            <a class="text-link" href="projects.html#hydroponics">Explore the controller</a>
+          </div>
+        </article>
+        <article class="practice-story practice-story--firmware" id="practice-firmware" aria-labelledby="tab-practice-firmware">
+          <div class="story-image story-image--rover">
+            <img src="assets/homeguard.webp" width="1500" height="634" alt="Assembled HomeGuard rover with front-mounted ultrasonic sensors" loading="lazy">
+          </div>
+          <div class="story-copy">
+            <p class="eyebrow">HomeGuard</p>
+            <h3>Writing the code that moves the rover</h3>
+            <p>I wrote the STM32 firmware that drives the stepper motors, reads the sensors, and sends telemetry. I used both bare-metal C and FreeRTOS to organize the rover’s work.</p>
+            <a class="text-link" href="projects.html#homeguard">Explore the rover</a>
+          </div>
+        </article>
+        <article class="practice-story practice-story--team" id="practice-team" aria-labelledby="tab-practice-team">
+          <div class="story-image story-image--locker">
+            <img src="assets/droplock.webp" width="1450" height="967" alt="DropLock hardware with the booking and administration screens" loading="lazy">
+          </div>
+          <div class="story-copy">
+            <p class="eyebrow">DropLock</p>
+            <h3>Taking a five-person build to a live demo</h3>
+            <p>I led the team and built the booking API, dashboard, and tablet session controls. For the demonstration, we followed a parcel all the way from a website booking to verified pickup.</p>
+            <a class="text-link" href="projects.html#droplock">Explore the locker</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap about-source" aria-labelledby="about-source-title">
+      <div>
+        <h2 id="about-source-title">Open-source work</h2>
+        <p>I publish my STM32 drivers with wiring notes and C examples so other students can try them on their own boards.</p>
+      </div>
+      <div class="about-source-links">
+        <a class="button button-primary" href="https://github.com/Zer0-Dayy/STM-Open-Library" target="_blank" rel="noopener noreferrer">STM-Open-Library on GitHub</a>
+        <a class="text-link" href="projects.html#stm-open-library">Browse the five drivers</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-name">Mohamed Aziz Missaoui</p>
+        <p class="footer-location">Tunis, Tunisia</p>
+      </div>
+      <nav class="footer-links" aria-label="Contact links">
+        <a href="mailto:missaouiaziz05@gmail.com">Email</a>
+        <a href="https://github.com/Zer0-Dayy" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

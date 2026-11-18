@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Education, internship experience, engineering projects, and skills of Mohamed Aziz Missaoui.">
+  <meta name="theme-color" content="#f7f5ee">
+  <title>CV | Mohamed Aziz Missaoui</title>
+  <link rel="icon" href="assets/mark.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="interactions.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#cv">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">
+        <span class="wordmark-icon" aria-hidden="true">AM</span>
+        <span>Aziz Missaoui</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="cv.html" aria-current="page">CV</a>
+      </nav>
+      <a class="header-contact" href="mailto:missaouiaziz05@gmail.com"><span class="mail-symbol" aria-hidden="true"></span>Get in touch</a>
+    </div>
+  </header>
+
+  <main id="cv" tabindex="-1" class="wrap cv-page">
+    <header class="page-heading cv-heading">
+      <div>
+        <p class="eyebrow">Curriculum vitae</p>
+        <h1>Mohamed Aziz <em>Missaoui</em></h1>
+        <p class="cv-role">Computer Systems Engineering Student <span aria-hidden="true">·</span> Tunis, Tunisia</p>
+        <div class="cv-contact">
+          <a href="mailto:missaouiaziz05@gmail.com">missaouiaziz05@gmail.com</a>
+          <a href="https://github.com/Zer0-Dayy" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+      <button class="button button-primary print-button" type="button" data-print-cv hidden>Print / save as PDF</button>
+    </header>
+
+    <div class="cv-layout">
+      <div class="cv-content">
+        <section class="cv-section" id="experience" tabindex="-1" aria-labelledby="experience-title">
+          <h2 id="experience-title">Internship</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-heading">
+              <h3>Infinite Dimensions</h3>
+              <p class="cv-date">Jun – Aug 2025</p>
+            </div>
+            <p class="cv-subtitle">Pre-engineering Intern in Embedded Systems &amp; Prototyping</p>
+            <ul>
+              <li>Analyzed Prusa firmware and adapted thermistor ADC tables, motor settings, and I/O pin assignments for custom recycling hardware.</li>
+              <li>Built and tested a shredder and filament recycler, processing approximately 4–5 kg of PLA and PETG waste.</li>
+              <li>Designed and 3D-printed prototype parts using SolidWorks and Autodesk Fusion.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="cv-section" id="education" tabindex="-1" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <div class="cv-entry">
+            <div class="cv-entry-heading">
+              <h3>South Mediterranean University</h3>
+              <p class="cv-date">Jan 2024 – Present</p>
+            </div>
+            <p class="cv-subtitle">Engineering Degree in Computer Systems Engineering</p>
+            <p><strong>3.96/4.00 CGPA</strong> · Dean’s Honor List · Expected graduation June 2028</p>
+            <p>Coursework in embedded systems, microelectronic circuits, signals and systems, digital signal processing, multivariable calculus, and feedback control with PID in MATLAB.</p>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-heading">
+              <h3>Pioneer High School of Jendouba</h3>
+              <p class="cv-date">Jun 2023</p>
+            </div>
+            <p class="cv-subtitle">Tunisian Mathematics Baccalaureate</p>
+            <p><strong>18.87/20</strong> · National rank 20 of 8,673</p>
+          </div>
+        </section>
+
+        <section class="cv-section" aria-labelledby="cv-projects-title">
+          <h2 id="cv-projects-title">Selected project work</h2>
+          <ul class="cv-projects">
+            <li>
+              <a class="cv-project-link" href="projects.html#hydroponics">Hydroponics Monitoring</a>
+              <span>Seven sensor interfaces, backup power, and ESP32-S3 PCB redesign.</span>
+            </li>
+            <li>
+              <a class="cv-project-link" href="projects.html#droplock">DropLock</a>
+              <span>Raspberry Pi parcel locker with a booking API and QR access. University Best Project Award.</span>
+            </li>
+            <li>
+              <a class="cv-project-link" href="projects.html#homeguard">HomeGuard</a>
+              <span>STM32 rover firmware for motion, sensing, and telemetry.</span>
+            </li>
+            <li>
+              <a class="cv-project-link" href="https://github.com/Zer0-Dayy/STM-Open-Library" target="_blank" rel="noopener noreferrer">STM-Open-Library on GitHub</a>
+              <span>Five STM32 HAL drivers with wiring guides and C examples.</span>
+            </li>
+            <li>
+              <a class="cv-project-link" href="projects.html#lockx">LockX</a>
+              <span>ESP32 locker with PIN access and timed locking. University Best Project Award.</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="cv-sidebar">
+        <section class="cv-card" aria-labelledby="skills-title">
+          <h2 id="skills-title">Skills</h2>
+          <dl class="skill-list">
+            <dt>Programming and HDL</dt>
+            <dd>C, Python, Java, MIPS Assembly, MATLAB, Verilog for FPGA programming</dd>
+            <dt>Embedded systems</dt>
+            <dd>STM32F4, ESP32-S3, ESP8266, Raspberry Pi, STM32 HAL, FreeRTOS</dd>
+            <dt>Lab and design</dt>
+            <dd>Oscilloscope measurements, analog and digital testing, SolidWorks, Autodesk Fusion</dd>
+            <dt>Development tools</dt>
+            <dd>STM32CubeIDE, PlatformIO, Git</dd>
+            <dt>Team leadership</dt>
+            <dd>Coordinating teams of four to five, delegating tasks, and reviewing designs and code</dd>
+          </dl>
+        </section>
+        <section class="cv-card" aria-labelledby="languages-title">
+          <h2 id="languages-title">Languages</h2>
+          <dl class="language-list">
+            <div><dt>Arabic</dt><dd>Native</dd></div>
+            <div><dt>French</dt><dd>C2</dd></div>
+            <div><dt>English</dt><dd>C2</dd></div>
+            <div><dt>Spanish</dt><dd>A1</dd></div>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-name">Mohamed Aziz Missaoui</p>
+        <p class="footer-location">Tunis, Tunisia</p>
+      </div>
+      <nav class="footer-links" aria-label="Contact links">
+        <a href="mailto:missaouiaziz05@gmail.com">Email</a>
+        <a href="https://github.com/Zer0-Dayy" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Embedded systems projects by Mohamed Aziz Missaoui, featuring Hydroponics Monitoring, DropLock, and HomeGuard.">
+  <meta name="theme-color" content="#f7f5ee">
+  <title>Projects | Mohamed Aziz Missaoui</title>
+  <link rel="icon" href="assets/mark.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="interactions.js" defer></script>
+  <script src="assets/pcb-model.js" defer></script>
+  <script src="assets/pcb-renderer.js" defer></script>
+  <script src="pcb-explorer.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="wordmark" href="index.html">
+        <span class="wordmark-icon" aria-hidden="true">AM</span>
+        <span>Aziz Missaoui</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html">About</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <a class="header-contact" href="mailto:missaouiaziz05@gmail.com"><span class="mail-symbol" aria-hidden="true"></span>Get in touch</a>
+    </div>
+  </header>
+
+  <main id="projects" tabindex="-1" class="wrap projects-page">
+    <header class="page-heading projects-heading">
+      <h1>Projects</h1>
+      <p>A closer look at the hardware I design, the firmware I write, and the prototypes I test.</p>
+    </header>
+    <nav class="project-nav" aria-label="Project index">
+      <div class="project-index-links">
+        <a href="#hydroponics"><strong>Hydroponics Monitoring</strong><span>Sensor electronics</span></a>
+        <a href="#droplock"><strong>DropLock</strong><span>Parcel locker</span></a>
+        <a href="#homeguard"><strong>HomeGuard</strong><span>Mobile robotics</span></a>
+        <a href="#stm-open-library"><strong>STM-Open-Library</strong><span>Peripheral drivers</span></a>
+        <a href="#lockx"><strong>LockX</strong><span>First-generation locker</span></a>
+      </div>
+      <label class="project-picker" hidden>Project index <select aria-label="Jump to a project"></select></label>
+    </nav>
+
+    <article class="case-study case-study--hydro" id="hydroponics" tabindex="-1" aria-labelledby="hydro-title">
+      <div class="case-layout">
+        <div class="case-copy">
+          <p class="case-meta"><span>Project Lead</span><span>Sep 2026 – Present</span></p>
+          <h2 id="hydro-title">Hydroponics Monitoring</h2>
+          <p class="case-lead">An ESP32-S3 controller redesign for a seven-sensor hydroponics monitoring system.</p>
+          <p>I designed and tested the sensor interfaces, including the circuits that scale and filter analog voltages for the ADC. I also built a 3S LiPo backup supply to keep essential monitoring running when external power drops out.</p>
+          <p>I lead the two-layer PCB design and review the team’s C/FreeRTOS firmware, which uses BLE and MQTT.</p>
+        </div>
+        <figure class="case-figure board-explorer" id="pcb-explorer" aria-label="Hydroponics PCB explorer" tabindex="-1" data-tabs data-board-explorer>
+          <div class="board-toolbar" data-board-toolbar hidden>
+            <button class="board-mode" type="button" data-board-mode aria-pressed="false">View in 3D</button>
+            <button class="board-reset" type="button" data-board-reset hidden>Reset angle</button>
+            <span class="board-instructions" data-board-instructions>Choose a numbered circle</span>
+          </div>
+          <div class="board-image" data-board-image>
+            <img src="assets/hydroponics-pcb.webp" width="1600" height="951" alt="Top view of the hydroponics controller PCB" fetchpriority="high">
+            <div class="board-canvas" data-board-canvas hidden></div>
+            <div class="board-markers" data-tab-list role="tablist" aria-label="Board components" hidden>
+              <button class="board-marker" style="--x: 10.65%; --y: 51.12%"
+                data-pcb-at="72.4 100.4" data-pcb-nodes="U1" type="button" role="tab" id="tab-board-cpu"
+                aria-label="1. ESP32-S3 module" aria-controls="board-cpu"><span aria-hidden="true">1</span></button>
+              <button class="board-marker" style="--x: 42.78%; --y: 15.04%"
+                data-pcb-at="134.13 59.2" data-pcb-nodes="J14" type="button" role="tab" id="tab-board-ph"
+                aria-label="2. pH sensor input" aria-controls="board-ph"><span aria-hidden="true">2</span></button>
+              <button class="board-marker" style="--x: 30.57%; --y: 15.04%"
+                data-pcb-at="110.67 59.2" data-pcb-nodes="J5" type="button" role="tab" id="tab-board-tds"
+                aria-label="3. TDS sensor input" aria-controls="board-tds"><span aria-hidden="true">3</span></button>
+              <button class="board-marker" style="--x: 55.83%; --y: 15.08%"
+                data-pcb-at="159.21 59.25" data-pcb-nodes="J7" type="button" role="tab" id="tab-board-ultrasonic"
+                aria-label="4. Ultrasonic sensor input" aria-controls="board-ultrasonic"><span aria-hidden="true">4</span></button>
+              <button class="board-marker" style="--x: 43.84%; --y: 85.14%"
+                data-pcb-at="136.17 139.25" data-pcb-nodes="J4" type="button" role="tab" id="tab-board-temperature"
+                aria-label="5. Water temperature input" aria-controls="board-temperature"><span aria-hidden="true">5</span></button>
+              <button class="board-marker" style="--x: 27.25%; --y: 85.14%"
+                data-pcb-at="104.29 139.25" data-pcb-nodes="J2" type="button" role="tab" id="tab-board-environment"
+                aria-label="6. BME280 input" aria-controls="board-environment"><span aria-hidden="true">6</span></button>
+              <button class="board-marker" style="--x: 57.98%; --y: 85.14%"
+                data-pcb-at="163.33 139.25" data-pcb-nodes="J8" type="button" role="tab" id="tab-board-light"
+                aria-label="7. Ambient light input" aria-controls="board-light"><span aria-hidden="true">7</span></button>
+              <button class="board-marker" style="--x: 75.56%; --y: 85.36%"
+                data-pcb-at="197.12 139.5" data-pcb-nodes="J11" type="button" role="tab" id="tab-board-air"
+                aria-label="8. Air quality input" aria-controls="board-air"><span aria-hidden="true">8</span></button>
+              <button class="board-marker" style="--x: 20.16%; --y: 15.08%"
+                data-pcb-at="90.67 59.25" data-pcb-nodes="J13" type="button" role="tab" id="tab-board-relay"
+                aria-label="9. Relay output" aria-controls="board-relay"><span aria-hidden="true">9</span></button>
+              <button class="board-marker" style="--x: 69.37%; --y: 14.86%"
+                data-pcb-at="185.21 59" data-pcb-nodes="J6" type="button" role="tab" id="tab-board-battery"
+                aria-label="10. Battery input" aria-controls="board-battery"><span aria-hidden="true">10</span></button>
+              <button class="board-marker" style="--x: 83.18%; --y: 32.82%"
+                data-pcb-at="211.75 79.5" data-pcb-nodes="" type="button" role="tab" id="tab-board-charger"
+                aria-label="11. USB-C charger footprint" aria-controls="board-charger"><span aria-hidden="true">11</span></button>
+              <button class="board-marker" style="--x: 63.53%; --y: 43.59%"
+                data-pcb-at="174 91.8" data-pcb-nodes="" type="button" role="tab" id="tab-board-backup"
+                aria-label="12. 5V backup regulator footprint" aria-controls="board-backup"><span aria-hidden="true">12</span></button>
+              <button class="board-marker" style="--x: 44.43%; --y: 65.08%"
+                data-pcb-at="137.3 116.34" data-pcb-nodes="" type="button" role="tab" id="tab-board-logic-power"
+                aria-label="13. 3.3V regulator footprint" aria-controls="board-logic-power"><span aria-hidden="true">13</span></button>
+              <button class="board-marker" style="--x: 57.81%; --y: 63.03%"
+                data-pcb-at="163 114" data-pcb-nodes="Q1 Q2 D1 D2" type="button" role="tab" id="tab-board-switching"
+                aria-label="14. Power switchover" aria-controls="board-switching"><span aria-hidden="true">14</span></button>
+              <button class="board-marker" style="--x: 64.78%; --y: 29.75%"
+                data-pcb-at="176.4 76" data-pcb-nodes="" type="button" role="tab" id="tab-board-fuse"
+                aria-label="15. Fuse footprint" aria-controls="board-fuse"><span aria-hidden="true">15</span></button>
+              <button class="board-marker" style="--x: 17.03%; --y: 87.33%"
+                data-pcb-at="84.65 141.75" data-pcb-nodes="" type="button" role="tab" id="tab-board-usb"
+                aria-label="16. Micro-USB ports" aria-controls="board-usb"><span aria-hidden="true">16</span></button>
+              <button class="board-marker" style="--x: 8.88%; --y: 38.29%"
+                data-pcb-at="69 85.75" data-pcb-nodes="SW2" type="button" role="tab" id="tab-board-buttons"
+                aria-label="17. Reset and boot buttons" aria-controls="board-buttons"><span aria-hidden="true">17</span></button>
+            </div>
+          </div>
+          <figcaption>
+            <div class="board-chooser" data-board-chooser hidden>
+              <label for="board-component">Component</label>
+              <select id="board-component" data-board-select></select>
+            </div>
+            <p class="board-message" data-board-message role="status" hidden></p>
+            <div class="board-panels" aria-live="polite">
+              <div class="board-detail" id="board-cpu" aria-labelledby="tab-board-cpu">
+                <h3>U1 · ESP32-S3 module</h3>
+                <p>The controller reads the sensors and runs the monitoring firmware. The ESP32-S3 also handles BLE and MQTT communications.</p>
+              </div>
+              <div class="board-detail" id="board-ph" aria-labelledby="tab-board-ph">
+                <h3>J14 · pH sensor input</h3>
+                <p>The pH-4502C interface connects here. Its analog output is scaled and filtered before the ESP32-S3 samples it.</p>
+              </div>
+              <div class="board-detail" id="board-tds" aria-labelledby="tab-board-tds">
+                <h3>J5 · TDS sensor input</h3>
+                <p>The SEN0244 input reads total dissolved solids (TDS) in the nutrient solution.</p>
+              </div>
+              <div class="board-detail" id="board-ultrasonic" aria-labelledby="tab-board-ultrasonic">
+                <h3>J7 · Ultrasonic sensor input</h3>
+                <p>The HC-SR04 measures distance to the water surface. The firmware uses that distance to track the reservoir level.</p>
+              </div>
+              <div class="board-detail" id="board-temperature" aria-labelledby="tab-board-temperature">
+                <h3>J4 · Water temperature input</h3>
+                <p>A DS18B20 probe connects here to report the nutrient solution temperature over a 1-Wire interface.</p>
+              </div>
+              <div class="board-detail" id="board-environment" aria-labelledby="tab-board-environment">
+                <h3>J2 · BME280 input</h3>
+                <p>The BME280 measures air temperature, humidity, and pressure. It communicates with the controller over I²C.</p>
+              </div>
+              <div class="board-detail" id="board-light" aria-labelledby="tab-board-light">
+                <h3>J8 · Ambient light input</h3>
+                <p>The DFR0026 sensor sends an analog signal that varies with ambient light.</p>
+              </div>
+              <div class="board-detail" id="board-air" aria-labelledby="tab-board-air">
+                <h3>J11 · Air quality input</h3>
+                <p>The SGP30 connects over I²C and reports air quality readings, including total volatile organic compounds and estimated CO₂ equivalent.</p>
+              </div>
+              <div class="board-detail" id="board-relay" aria-labelledby="tab-board-relay">
+                <h3>J13 · Relay output</h3>
+                <p>This terminal connects the controller to the external relay module.</p>
+              </div>
+              <div class="board-detail" id="board-battery" aria-labelledby="tab-board-battery">
+                <h3>J6 · Battery input</h3>
+                <p>The protected 3S battery connects to the controller’s backup power stage at this terminal.</p>
+              </div>
+              <div class="board-detail" id="board-charger" aria-labelledby="tab-board-charger">
+                <h3>J10 · USB-C charger footprint</h3>
+                <p>The outline reserves space for the MRB045 module that charges the 3S battery.</p>
+              </div>
+              <div class="board-detail" id="board-backup" aria-labelledby="tab-board-backup">
+                <h3>J9 · 5V backup regulator footprint</h3>
+                <p>The MP1584 module at this footprint steps the battery supply down to 5V for backup operation.</p>
+              </div>
+              <div class="board-detail" id="board-logic-power" aria-labelledby="tab-board-logic-power">
+                <h3>J12 · 3.3V regulator footprint</h3>
+                <p>A second MP1584 module produces the 3.3V logic rail from the selected 5V supply.</p>
+              </div>
+              <div class="board-detail" id="board-switching" aria-labelledby="tab-board-switching">
+                <h3>Q1, Q2 · D1, D2 · Power switchover</h3>
+                <p>The MOSFET stage controls the battery path. The two 1N5822 Schottky diodes isolate the 5V power paths.</p>
+              </div>
+              <div class="board-detail" id="board-fuse" aria-labelledby="tab-board-fuse">
+                <h3>F1 · Fuse footprint</h3>
+                <p>The fuse footprint sits in the battery charging section near the charger module.</p>
+              </div>
+              <div class="board-detail" id="board-usb" aria-labelledby="tab-board-usb">
+                <h3>J1, J3 · Micro-USB ports</h3>
+                <p>The two bottom-edge ports serve separate roles. J1 is for USB data and J3 is the 5V power input.</p>
+              </div>
+              <div class="board-detail" id="board-buttons" aria-labelledby="tab-board-buttons">
+                <h3>SW1, SW2 · Reset and boot buttons</h3>
+                <p>SW1 resets the ESP32-S3. SW2 sets its boot mode for firmware loading.</p>
+              </div>
+            </div>
+            <a class="board-source" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/main/PCB%20Design/BOM/KiCad%20BOM.csv" target="_blank" rel="noopener noreferrer">PCB component list</a>
+          </figcaption>
+        </figure>
+      </div>
+
+      <section class="flow" data-tabs aria-labelledby="hydro-flow-title">
+        <div class="flow-header">
+          <h3 id="hydro-flow-title">Follow an analog reading</h3>
+          <button class="flow-play" type="button" data-flow-play hidden>
+            <span class="play-icon" aria-hidden="true"></span><span data-play-label>Play steps</span>
+          </button>
+        </div>
+        <div class="flow-tabs" data-tab-list role="tablist" aria-label="Analog reading stages" hidden>
+          <button class="flow-tab" type="button" role="tab" id="tab-hydro-sensor" aria-controls="step-hydro-sensor"><span>Sensor</span></button>
+          <button class="flow-tab" type="button" role="tab" id="tab-hydro-condition" aria-controls="step-hydro-condition"><span>Condition</span></button>
+          <button class="flow-tab" type="button" role="tab" id="tab-hydro-sample" aria-controls="step-hydro-sample"><span>Sample</span></button>
+          <button class="flow-tab" type="button" role="tab" id="tab-hydro-firmware" aria-controls="step-hydro-firmware"><span>Firmware</span></button>
+        </div>
+        <div class="flow-panels">
+          <section class="flow-panel" id="step-hydro-sensor" aria-labelledby="tab-hydro-sensor">
+            <h4>Sensor output</h4>
+            <p>An analog sensor produces a voltage that varies with the physical quantity it measures.</p>
+          </section>
+          <section class="flow-panel" id="step-hydro-condition" aria-labelledby="tab-hydro-condition">
+            <h4>Scale and filter</h4>
+            <p>The interface scales the voltage to the ADC input range and filters unwanted variation before sampling.</p>
+          </section>
+          <section class="flow-panel" id="step-hydro-sample" aria-labelledby="tab-hydro-sample">
+            <h4>Sample on the ESP32-S3</h4>
+            <p>The analog-to-digital converter (ADC) turns the conditioned voltage into a number the firmware can read.</p>
+          </section>
+          <section class="flow-panel" id="step-hydro-firmware" aria-labelledby="tab-hydro-firmware">
+            <h4>Process in firmware</h4>
+            <p>The C/FreeRTOS firmware handles sensor readings. The monitoring system uses BLE and MQTT to exchange data.</p>
+          </section>
+        </div>
+        <span class="sr-only" data-flow-status aria-live="polite"></span>
+      </section>
+    </article>
+
+    <article class="case-study case-study--locker" id="droplock" tabindex="-1" aria-labelledby="locker-title">
+      <div class="case-layout">
+        <div class="case-copy">
+          <p class="case-meta"><span>Project Lead</span><span>Dec 2025 – Jun 2026</span></p>
+          <h2 id="locker-title">DropLock</h2>
+          <p class="case-lead">A Raspberry Pi parcel locker built for the full handoff from online booking to verified pickup.</p>
+          <p>I led a five-person team and developed tablet session control, a Streamlit/Firebase dashboard, and a FastAPI booking API. The prototype brought QR access, MQTT, door and tamper sensing, and HX711 weight verification together.</p>
+          <p class="project-distinction">University Best Project Award</p>
+        </div>
+        <div class="locker-walkthrough">
+          <figure class="case-figure case-figure--locker">
+            <div class="locker-photo">
+              <div class="locker-image-plane">
+                <img src="assets/droplock.webp" width="1450" height="967" alt="DropLock dashboard and booking site shown next to the scanner, controller, and white locker door" loading="lazy">
+                <span class="locker-probe" data-locker-probe aria-hidden="true" hidden></span>
+              </div>
+            </div>
+            <figcaption>DropLock prototype with the admin dashboard and booking site.</figcaption>
+          </figure>
+          <section class="flow" data-tabs aria-labelledby="locker-flow-title">
+            <div class="flow-header">
+              <h3 id="locker-flow-title">From booking to pickup</h3>
+              <button class="flow-play" type="button" data-flow-play hidden>
+                <span class="play-icon" aria-hidden="true"></span><span data-play-label>Play steps</span>
+              </button>
+            </div>
+            <div class="flow-tabs" data-tab-list role="tablist" aria-label="Parcel handoff stages" hidden>
+              <button class="flow-tab" type="button" role="tab" id="tab-locker-book" aria-controls="step-locker-book" data-part="Booking site" data-x="57%" data-y="53%"><span>Book</span></button>
+              <button class="flow-tab" type="button" role="tab" id="tab-locker-scan" aria-controls="step-locker-scan" data-part="QR scanner" data-x="16.5%" data-y="33%"><span>Scan</span></button>
+              <button class="flow-tab" type="button" role="tab" id="tab-locker-verify" aria-controls="step-locker-verify" data-part="Admin dashboard" data-x="37%" data-y="49%"><span>Verify</span></button>
+              <button class="flow-tab" type="button" role="tab" id="tab-locker-pickup" aria-controls="step-locker-pickup" data-part="Pickup door" data-x="74%" data-y="52.5%"><span>Pick up</span></button>
+            </div>
+            <div class="flow-panels">
+              <section class="flow-panel" id="step-locker-book" aria-labelledby="tab-locker-book">
+                <h4>Book a delivery</h4>
+                <p>The booking website connects to the FastAPI service to create a locker booking.</p>
+              </section>
+              <section class="flow-panel" id="step-locker-scan" aria-labelledby="tab-locker-scan">
+                <h4>Scan for access</h4>
+                <p>A QR code is presented at the locker. The tablet handles the session at the prototype.</p>
+              </section>
+              <section class="flow-panel" id="step-locker-verify" aria-labelledby="tab-locker-verify">
+                <h4>Check door state and weight</h4>
+                <p>Door and tamper sensors report the locker state. A load cell read through the HX711 supplies the weight measurement.</p>
+              </section>
+              <section class="flow-panel" id="step-locker-pickup" aria-labelledby="tab-locker-pickup">
+                <h4>Verify pickup</h4>
+                <p>The recipient uses QR access to collect the parcel. Weight sensing gives the system a way to check that the parcel was removed.</p>
+              </section>
+            </div>
+            <span class="sr-only" data-flow-status aria-live="polite"></span>
+          </section>
+        </div>
+      </div>
+    </article>
+
+    <article class="case-study case-study--rover" id="homeguard" tabindex="-1" aria-labelledby="rover-title">
+      <div class="case-layout">
+        <div class="case-copy">
+          <p class="case-meta"><span>Project Lead</span><span>Sep 2025 – Dec 2025</span></p>
+          <h2 id="rover-title">HomeGuard</h2>
+          <p class="case-lead">An indoor monitoring rover that measures its surroundings and steers around obstacles.</p>
+          <p>I wrote C firmware for the STM32F439 to drive the stepper motors, detect obstacles with ultrasonic sensors, and collect BME280 and MQ-2 readings.</p>
+          <p>I implemented timer interrupts, PWM, ADC and I²C, and sent telemetry through an ESP8266. I worked on both bare-metal and FreeRTOS versions of the firmware.</p>
+        </div>
+        <figure class="case-figure case-figure--rover">
+          <img src="assets/homeguard.webp" width="1500" height="634" alt="HomeGuard enclosure CAD views alongside a front view of the assembled rover" loading="lazy">
+          <figcaption>Enclosure CAD views and the assembled rover.</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <div id="other-work" tabindex="-1">
+      <article class="case-study library-project" id="stm-open-library" tabindex="-1" aria-labelledby="library-title">
+        <div class="case-layout library-layout">
+          <div class="case-copy">
+            <p class="case-meta"><span>Author</span><span>Sep 2025</span></p>
+            <h2 id="library-title">STM-Open-Library</h2>
+            <p class="case-lead">Five reusable peripheral drivers for STM32 microcontrollers.</p>
+            <p>I wrote these modules using STM32’s hardware abstraction layer (HAL). Each driver comes with wiring notes, setup instructions, and a C example that shows how to use it.</p>
+            <a class="button button-primary repo-button" href="https://github.com/Zer0-Dayy/STM-Open-Library" target="_blank" rel="noopener noreferrer">Open GitHub repository</a>
+          </div>
+          <section class="driver-directory" aria-labelledby="directory-title">
+            <h3 id="directory-title">Explore the drivers</h3>
+            <details name="stm-drivers" open>
+              <summary><span>BME280 environmental sensor</span><span class="driver-bus">I²C</span></summary>
+              <div class="driver-notes">
+                <p>A read triggers a measurement. The driver uses the sensor’s calibration data to return temperature, humidity, and pressure.</p>
+                <div class="driver-links">
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/BME-280%20Environmental%20Sensor/README.md" target="_blank" rel="noopener noreferrer" aria-label="BME280 driver guide on GitHub">Driver guide</a>
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/BME-280%20Environmental%20Sensor/Example.c" target="_blank" rel="noopener noreferrer" aria-label="BME280 C example on GitHub">C example</a>
+                </div>
+              </div>
+            </details>
+            <details name="stm-drivers">
+              <summary><span>HC-SR04 and HY-SRF05</span><span class="driver-bus">Timers</span></summary>
+              <div class="driver-notes">
+                <p>One STM32 timer sends the trigger pulse. A second measures the echo duration so the driver can calculate distance.</p>
+                <div class="driver-links">
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/HC-SR04%20And%20HY-SRF05%20Ultrasonic%20Sensors/README.md" target="_blank" rel="noopener noreferrer" aria-label="Ultrasonic driver guide on GitHub">Driver guide</a>
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/HC-SR04%20And%20HY-SRF05%20Ultrasonic%20Sensors/Example.c" target="_blank" rel="noopener noreferrer" aria-label="Ultrasonic C example on GitHub">C example</a>
+                </div>
+              </div>
+            </details>
+            <details name="stm-drivers">
+              <summary><span>MQ-2 gas sensor</span><span class="driver-bus">ADC</span></summary>
+              <div class="driver-notes">
+                <p>The driver averages voltage samples and compares the sensor resistance with a clean-air baseline.</p>
+                <div class="driver-links">
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/MQ-2%20Gas%20Sensor/README.md" target="_blank" rel="noopener noreferrer" aria-label="MQ-2 driver guide on GitHub">Driver guide</a>
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/MQ-2%20Gas%20Sensor/Example.c" target="_blank" rel="noopener noreferrer" aria-label="MQ-2 C example on GitHub">C example</a>
+                </div>
+              </div>
+            </details>
+            <details name="stm-drivers">
+              <summary><span>ESP-01 Wi-Fi</span><span class="driver-bus">UART</span></summary>
+              <div class="driver-notes">
+                <p>Interrupts handle serial communication with the Wi-Fi module, leaving the main loop available while data moves.</p>
+                <div class="driver-links">
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/ESP-01%20Wi-Fi%20Module/README.md" target="_blank" rel="noopener noreferrer" aria-label="ESP-01 driver guide on GitHub">Driver guide</a>
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/ESP-01%20Wi-Fi%20Module/Basic_Driver_Example.c" target="_blank" rel="noopener noreferrer" aria-label="ESP-01 C example on GitHub">C example</a>
+                </div>
+              </div>
+            </details>
+            <details name="stm-drivers">
+              <summary><span>28BYJ-48 stepper motors</span><span class="driver-bus">Timer interrupt</span></summary>
+              <div class="driver-notes">
+                <p>A shared timer advances two motors through a half-step sequence. The program can continue working while the motors move.</p>
+                <div class="driver-links">
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/28BYJ-48%20Stepper%20Motor%20and%20ULN2003%20Driver/README.md" target="_blank" rel="noopener noreferrer" aria-label="28BYJ-48 driver guide on GitHub">Driver guide</a>
+                  <a href="https://github.com/Zer0-Dayy/STM-Open-Library/blob/master/28BYJ-48%20Stepper%20Motor%20and%20ULN2003%20Driver/Example.c" target="_blank" rel="noopener noreferrer" aria-label="28BYJ-48 C example on GitHub">C example</a>
+                </div>
+              </div>
+            </details>
+          </section>
+        </div>
+      </article>
+      <article class="lockx-card" id="lockx" tabindex="-1" aria-labelledby="lockx-title">
+        <div>
+          <p class="case-meta"><span>Project Lead</span><span>Jan 2024 – Jun 2024</span></p>
+          <h2 id="lockx-title">LockX</h2>
+        </div>
+        <div>
+          <p>I led a four-person team building an ESP32 locker with PIN access, remote booking, and timed locking. LockX won a University Best Project Award and became the starting point for DropLock.</p>
+          <a class="text-link" href="#droplock">See the second generation</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-name">Mohamed Aziz Missaoui</p>
+        <p class="footer-location">Tunis, Tunisia</p>
+      </div>
+      <nav class="footer-links" aria-label="Contact links">
+        <a href="mailto:missaouiaziz05@gmail.com">Email</a>
+        <a href="https://github.com/Zer0-Dayy" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
