@@ -191,13 +191,3 @@ for (const button of document.querySelectorAll("[data-print-cv]")) {
   button.hidden = false;
   button.addEventListener("click", () => window.print());
 }
-
-// Preserve links to the original component explorer after moving it into a disclosure.
-function revealBoardReference() {
-  if (location.hash === "#pcb-explorer") {
-    const reference = document.getElementById("pcb-explorer");
-    if (reference) reference.open = true;
-  }
-}
-window.addEventListener("hashchange", revealBoardReference);
-revealBoardReference();

@@ -26,14 +26,14 @@
         <a href="projects.html" aria-current="page">Projects</a>
         <a href="cv.html">CV</a>
       </nav>
-      <a class="header-contact" href="mailto:missaouiaziz05@gmail.com"><span class="mail-symbol" aria-hidden="true"></span>Email Aziz</a>
+      <a class="header-contact" href="mailto:missaouiaziz05@gmail.com"><span class="mail-symbol" aria-hidden="true"></span>Email me</a>
     </div>
   </header>
 
   <main id="projects" tabindex="-1" class="wrap projects-page">
     <header class="page-heading projects-heading">
       <h1>Projects</h1>
-      <p>Circuit designs, firmware, and bench prototypes for environmental monitoring, robotics, and parcel delivery.</p>
+      <p>I’ve worked on circuits and firmware for environmental monitoring, robotics, and parcel delivery.</p>
     </header>
     <nav class="project-nav" aria-label="Project index">
       <div class="project-index-links">
@@ -56,31 +56,11 @@
           <p class="case-meta"><span>Project Lead</span><span>Sep 2026 – Present</span></p>
           <h2 id="hydro-title">Hydroponics Monitoring</h2>
           <p class="case-lead">An ESP32-S3 controller monitors reservoir and air conditions and controls a grow lamp locally.</p>
-          <p>Aziz leads the PCB design and reviews the team’s C firmware. His work includes seven sensor interfaces and a 3S battery supply designed to keep the controller and four sensors powered during an outage.</p>
+          <p>I lead the PCB design and review our C firmware. I designed the sensor interfaces and a 3S battery supply so the controller can resume monitoring with four sensors after an outage-triggered reboot.</p>
           <p>FreeRTOS schedules sensor readings and lamp control. A Windows or Linux desktop app receives readings over Bluetooth Low Energy (BLE), calibrates probes, and stores measurements in SQLite.</p>
         </div>
-        <figure class="case-figure revision-map">
-          <a href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/Documentation/Port%20And%20LED%20Map.pdf" aria-label="Open the full Rev 1.8 port and LED map (PDF on GitHub)">
-            <img src="assets/rev-1-8-service-map.webp" width="1563" height="921" alt="Component-side layout showing USB data and power ports along the bottom edge, backup sockets, UART header, and five indicator LEDs.">
-          </a>
-          <figcaption>Rev 1.8 · Component-side service map</figcaption>
-        </figure>
-      </div>
-      <section class="revision-notes" aria-labelledby="revision-title">
-        <div>
-          <h3 id="revision-title">Designing for bench diagnosis</h3>
-          <p>Rev 1.8 adds backup sockets for the USB data and 5V ports, a UART recovery header, and five LEDs for checking the power rails and firmware activity. KiCad 10.0.8 reported zero electrical-rule violations, design-rule violations, or unconnected items. Connector fit, USB operation, and battery handover still need testing on the assembled board.</p>
-        </div>
-        <div class="revision-links">
-          <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/README.md">Rev 1.8 hardware guide</a>
-          <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/Validation/Revision_Checks.json">Board check results</a>
-          <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/BOM/KiCad_BOM.csv">PCB component list</a>
-          <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/tree/main">Hydroponics repository</a>
-        </div>
-      </section>
-      <details class="reference-explorer" id="pcb-explorer" tabindex="-1">
-        <summary>Explore the earlier PCB layout in 2D and 3D</summary>
-        <figure class="case-figure board-explorer" aria-label="Earlier hydroponics PCB layout" tabindex="-1" data-tabs data-board-explorer>
+        <figure class="case-figure board-explorer" id="pcb-explorer" aria-labelledby="pcb-viewer-caption" tabindex="-1" data-tabs data-board-explorer>
+          <figcaption id="pcb-viewer-caption">PCB explorer · Earlier board revision</figcaption>
           <div class="board-toolbar" data-board-toolbar hidden>
             <button class="board-mode" type="button" data-board-mode aria-pressed="false">3D view</button>
             <button class="board-reset" type="button" data-board-reset hidden>Reset angle</button>
@@ -143,7 +123,7 @@
                 aria-label="17. Reset and boot buttons" aria-controls="board-buttons"><span aria-hidden="true">17</span></button>
             </div>
           </div>
-          <figcaption>
+          <div class="board-component-details">
             <div class="board-chooser" data-board-chooser hidden>
               <label for="board-component">Component</label>
               <select id="board-component" data-board-select></select>
@@ -219,9 +199,27 @@
                 <p>SW1 resets the ESP32-S3. SW2 sets its boot mode for firmware loading.</p>
               </div>
             </div>
-          </figcaption>
+          </div>
         </figure>
-      </details>
+      </div>
+      <section class="revision-notes" id="pcb-revision" tabindex="-1" aria-labelledby="revision-title">
+        <div>
+          <h3 id="revision-title">Rev 1.8 service ports and diagnostics</h3>
+          <p>I added backup sockets for the USB data and 5V ports, a UART recovery header, and five LEDs for checking the power rails and firmware activity. KiCad 10.0.8 reported zero electrical-rule violations, design-rule violations, or unconnected items. Connector fit, USB operation, and battery handover still need testing on the assembled board.</p>
+          <div class="revision-links">
+            <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/README.md">Rev 1.8 hardware guide</a>
+            <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/Validation/Revision_Checks.json">Board check results</a>
+            <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/BOM/KiCad_BOM.csv">PCB component list</a>
+            <a class="text-link" href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/tree/main">Hydroponics repository</a>
+          </div>
+        </div>
+        <figure class="case-figure revision-map">
+          <a href="https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/Documentation/Port%20And%20LED%20Map.pdf" aria-label="Open the full Rev 1.8 port and LED map (PDF on GitHub)">
+            <img src="assets/rev-1-8-service-map.webp" loading="lazy" width="1563" height="921" alt="Component-side layout showing USB data and power ports along the bottom edge, backup sockets, UART header, and five indicator LEDs.">
+          </a>
+          <figcaption>Rev 1.8 · Component-side service map</figcaption>
+        </figure>
+      </section>
 
       <section class="flow" data-tabs aria-labelledby="hydro-flow-title">
         <div class="flow-header">
@@ -264,7 +262,7 @@
           <p class="case-meta"><span>Project Lead</span><span>Dec 2025 – Jun 2026</span></p>
           <h2 id="locker-title">DropLock</h2>
           <p class="case-lead">A Raspberry Pi parcel locker built for the full handoff from online booking to verified pickup.</p>
-          <p>Aziz led a five-person team and developed the FastAPI booking service, tablet workflow, and Streamlit dashboard. At drop-off, the tablet checks the courier’s signature, the door state, and the parcel weight before issuing a pickup code.</p>
+          <p>We built DropLock as a team of five. I led the project and developed the FastAPI booking service, tablet workflow, and Streamlit dashboard. At drop-off, the tablet checks the courier’s signature, door state, and parcel weight before issuing a pickup code.</p>
           <p class="project-distinction">University Best Project Award</p>
           <a class="text-link" href="https://github.com/Zer0-Dayy/DropLock">DropLock repository</a>
         </div>
@@ -321,7 +319,7 @@
           <p class="case-meta"><span>Project Lead</span><span>Sep 2025 – Dec 2025</span></p>
           <h2 id="rover-title">HomeGuard</h2>
           <p class="case-lead">An indoor monitoring rover that measures its surroundings and steers around obstacles.</p>
-          <p>Aziz developed the STM32F439 firmware for stepper control, ultrasonic ranging, and environmental sensing. The BME280 measures temperature, humidity, and pressure. An MQ-2 provides the gas-sensor signal.</p>
+          <p>I wrote the STM32F439 firmware for stepper control, ultrasonic ranging, and environmental sensing. The BME280 measures temperature, humidity, and pressure. An MQ-2 provides the gas-sensor signal.</p>
           <p>Timer interrupts coordinate motion while an ESP8266 sends readings to a remote processing system. The repository includes bare-metal and FreeRTOS implementations.</p>
           <a class="text-link" href="https://github.com/Zer0-Dayy/HomeGuard">HomeGuard repository</a>
         </div>
@@ -339,7 +337,7 @@
             <p class="case-meta"><span>Author</span><span>Sep 2025</span></p>
             <h2 id="library-title">STM-Open-Library</h2>
             <p class="case-lead">Five reusable peripheral drivers for STM32 microcontrollers.</p>
-            <p>Each module uses the STM32 hardware abstraction layer (HAL) and includes wiring notes, setup instructions, and a working C example.</p>
+            <p>I wrote these modules using the STM32 hardware abstraction layer (HAL). Each includes wiring notes, setup instructions, and a C example.</p>
             <a class="button button-primary repo-button" href="https://github.com/Zer0-Dayy/STM-Open-Library">STM-Open-Library repository</a>
           </div>
           <section class="driver-directory" aria-labelledby="directory-title">
@@ -403,7 +401,7 @@
           <h2 id="lockx-title">LockX</h2>
         </div>
         <div>
-          <p>Aziz led a four-person team that built an ESP32 locker with PIN access, remote booking, and timed locking. The prototype won a University Best Project Award and established the booking workflow later used in DropLock.</p>
+          <p>I led a team of four building an ESP32 locker with PIN access, remote booking, and timed locking. The prototype won a University Best Project Award and established the booking workflow later used in DropLock.</p>
           <a class="text-link" href="#droplock">See the second generation</a>
         </div>
       </article>
