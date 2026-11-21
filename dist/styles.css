@@ -812,7 +812,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   background-size: 0.34rem 0.34rem;
   background-repeat: no-repeat;
 }
-.projects-page :is(.case-study, .lockx-card, .board-explorer, #other-work) { scroll-margin-top: 4.4rem; }
+.projects-page :is(.case-study, .lockx-card, .board-explorer, .revision-notes, #other-work) { scroll-margin-top: 4.4rem; }
 
 .case-study {
   margin-bottom: clamp(1.25rem, 3vw, 2.25rem);
@@ -1677,15 +1677,21 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 }
 .revision-notes h3 { font: 400 1.55rem / 1.25 var(--serif); }
 .revision-notes p { margin-top: 0.5rem; }
-.revision-links { display: grid; justify-items: start; align-content: center; }
-.reference-explorer > summary {
-  width: fit-content;
-  padding: 0.6rem 0.2rem;
-  color: var(--green-deep);
-  font-weight: 600;
-  cursor: pointer;
+.revision-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  margin-top: 0.45rem;
 }
-.reference-explorer .board-explorer { max-width: 48rem; margin: 0.65rem auto 0; }
+.case-figure.board-explorer > figcaption {
+  margin: 0 0 0.55rem;
+  font-weight: 600;
+}
+.board-component-details {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
 .board-mode[aria-pressed="true"] { box-shadow: inset 0 0 0 2px white; }
 .projects-page :is(a, button, select, summary, [tabindex]):focus-visible {
   scroll-margin-top: 4.5rem;
@@ -1725,8 +1731,8 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
     font: inherit;
   }
   .project-nav:not(:has(.project-picker:not([hidden]))) { position: static; }
-  .projects-page :is(.case-study, .lockx-card, .board-explorer, #other-work) { scroll-margin-top: 3.65rem; }
-  .case-layout {
+  .projects-page :is(.case-study, .lockx-card, .board-explorer, .revision-notes, #other-work) { scroll-margin-top: 3.65rem; }
+  .case-layout, .revision-notes {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1835,7 +1841,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   .bench-caption strong { font: 600 0.875rem / 1.3 var(--sans); text-decoration: underline; text-underline-offset: 0.21em; }
   .projects-heading { grid-template-columns: 1fr; }
 
-  .practice-story, .cv-layout, .lockx-card, .revision-notes {
+  .practice-story, .cv-layout, .lockx-card {
     grid-template-columns: minmax(0, 1fr);
   }
 
