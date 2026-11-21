@@ -1194,18 +1194,17 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 
 .board-image {
   position: relative;
-  aspect-ratio: 1600 / 951;
+  aspect-ratio: 1600 / 960;
   overflow: hidden;
   isolation: isolate;
   border-radius: 0.85rem;
-  background: #ced3e2;
+  background: #e7ebe2;
 }
 
 .board-image img {
   position: absolute;
   inset: 0;
   display: block;
-  transform: scale(1.48);
 }
 
 .board-canvas {

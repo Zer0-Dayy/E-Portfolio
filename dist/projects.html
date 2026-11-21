@@ -60,67 +60,85 @@
           <p>FreeRTOS schedules sensor readings and lamp control. A Windows or Linux desktop app receives readings over Bluetooth Low Energy (BLE), calibrates probes, and stores measurements in SQLite.</p>
         </div>
         <figure class="case-figure board-explorer" id="pcb-explorer" aria-labelledby="pcb-viewer-caption" tabindex="-1" data-tabs data-board-explorer>
-          <figcaption id="pcb-viewer-caption">PCB explorer · Earlier board revision</figcaption>
+          <figcaption id="pcb-viewer-caption">PCB explorer · Rev 1.8</figcaption>
           <div class="board-toolbar" data-board-toolbar hidden>
             <button class="board-mode" type="button" data-board-mode aria-pressed="false">3D view</button>
             <button class="board-reset" type="button" data-board-reset hidden>Reset angle</button>
             <span class="board-instructions" data-board-instructions>Select a marker or choose a component below</span>
           </div>
           <div class="board-image" data-board-image>
-            <img src="assets/hydroponics-pcb.webp" width="1600" height="951" alt="Top view of the earlier hydroponics controller PCB" fetchpriority="high">
+            <img src="assets/hydroponics-pcb.webp" width="1600" height="960" alt="Top view of the Rev 1.8 hydroponics controller PCB" fetchpriority="high">
             <div class="board-canvas" data-board-canvas hidden></div>
             <div class="board-markers" data-tab-list role="tablist" aria-label="Board components" hidden>
-              <button class="board-marker" style="--x: 10.65%; --y: 51.12%"
-                data-pcb-at="72.4 100.4" data-pcb-nodes="U1" type="button" role="tab" id="tab-board-cpu"
+              <button class="board-marker" style="--x: 7.99%; --y: 51.06%"
+                data-pcb-at="72.39 100.40" data-pcb-nodes="U1" type="button" role="tab" id="tab-board-cpu"
                 aria-label="1. ESP32-S3 module" aria-controls="board-cpu"><span aria-hidden="true">1</span></button>
-              <button class="board-marker" style="--x: 42.78%; --y: 15.04%"
-                data-pcb-at="134.13 59.2" data-pcb-nodes="J14" type="button" role="tab" id="tab-board-ph"
+              <button class="board-marker" style="--x: 42.50%; --y: 13.24%"
+                data-pcb-at="134.50 59.55" data-pcb-nodes="J14" type="button" role="tab" id="tab-board-ph"
                 aria-label="2. pH sensor input" aria-controls="board-ph"><span aria-hidden="true">2</span></button>
-              <button class="board-marker" style="--x: 30.57%; --y: 15.04%"
-                data-pcb-at="110.67 59.2" data-pcb-nodes="J5" type="button" role="tab" id="tab-board-tds"
+              <button class="board-marker" style="--x: 29.47%; --y: 13.24%"
+                data-pcb-at="111.04 59.55" data-pcb-nodes="J5" type="button" role="tab" id="tab-board-tds"
                 aria-label="3. TDS sensor input" aria-controls="board-tds"><span aria-hidden="true">3</span></button>
-              <button class="board-marker" style="--x: 55.83%; --y: 15.08%"
-                data-pcb-at="159.21 59.25" data-pcb-nodes="J7" type="button" role="tab" id="tab-board-ultrasonic"
+              <button class="board-marker" style="--x: 56.43%; --y: 13.24%"
+                data-pcb-at="159.58 59.55" data-pcb-nodes="J7" type="button" role="tab" id="tab-board-ultrasonic"
                 aria-label="4. Ultrasonic sensor input" aria-controls="board-ultrasonic"><span aria-hidden="true">4</span></button>
-              <button class="board-marker" style="--x: 43.84%; --y: 85.14%"
-                data-pcb-at="136.17 139.25" data-pcb-nodes="J4" type="button" role="tab" id="tab-board-temperature"
+              <button class="board-marker" style="--x: 43.22%; --y: 86.76%"
+                data-pcb-at="135.80 138.95" data-pcb-nodes="J4" type="button" role="tab" id="tab-board-temperature"
                 aria-label="5. Water temperature input" aria-controls="board-temperature"><span aria-hidden="true">5</span></button>
-              <button class="board-marker" style="--x: 27.25%; --y: 85.14%"
-                data-pcb-at="104.29 139.25" data-pcb-nodes="J2" type="button" role="tab" id="tab-board-environment"
+              <button class="board-marker" style="--x: 25.51%; --y: 86.76%"
+                data-pcb-at="103.92 138.95" data-pcb-nodes="J2" type="button" role="tab" id="tab-board-environment"
                 aria-label="6. BME280 input" aria-controls="board-environment"><span aria-hidden="true">6</span></button>
-              <button class="board-marker" style="--x: 57.98%; --y: 85.14%"
-                data-pcb-at="163.33 139.25" data-pcb-nodes="J8" type="button" role="tab" id="tab-board-light"
+              <button class="board-marker" style="--x: 58.31%; --y: 86.76%"
+                data-pcb-at="162.96 138.95" data-pcb-nodes="J8" type="button" role="tab" id="tab-board-light"
                 aria-label="7. Ambient light input" aria-controls="board-light"><span aria-hidden="true">7</span></button>
-              <button class="board-marker" style="--x: 75.56%; --y: 85.36%"
-                data-pcb-at="197.12 139.5" data-pcb-nodes="J11" type="button" role="tab" id="tab-board-air"
+              <button class="board-marker" style="--x: 77.08%; --y: 86.99%"
+                data-pcb-at="196.75 139.20" data-pcb-nodes="J11" type="button" role="tab" id="tab-board-air"
                 aria-label="8. Air quality input" aria-controls="board-air"><span aria-hidden="true">8</span></button>
-              <button class="board-marker" style="--x: 20.16%; --y: 15.08%"
-                data-pcb-at="90.67 59.25" data-pcb-nodes="J13" type="button" role="tab" id="tab-board-relay"
+              <button class="board-marker" style="--x: 18.36%; --y: 13.24%"
+                data-pcb-at="91.04 59.55" data-pcb-nodes="J13" type="button" role="tab" id="tab-board-relay"
                 aria-label="9. Relay output" aria-controls="board-relay"><span aria-hidden="true">9</span></button>
-              <button class="board-marker" style="--x: 69.37%; --y: 14.86%"
-                data-pcb-at="185.21 59" data-pcb-nodes="J6" type="button" role="tab" id="tab-board-battery"
+              <button class="board-marker" style="--x: 70.88%; --y: 13.01%"
+                data-pcb-at="185.58 59.30" data-pcb-nodes="J6" type="button" role="tab" id="tab-board-battery"
                 aria-label="10. Battery input" aria-controls="board-battery"><span aria-hidden="true">10</span></button>
-              <button class="board-marker" style="--x: 83.18%; --y: 32.82%"
-                data-pcb-at="211.75 79.5" data-pcb-nodes="" type="button" role="tab" id="tab-board-charger"
+              <button class="board-marker" style="--x: 85.42%; --y: 31.71%"
+                data-pcb-at="211.75 79.50" data-pcb-nodes="" type="button" role="tab" id="tab-board-charger"
                 aria-label="11. USB-C charger footprint" aria-controls="board-charger"><span aria-hidden="true">11</span></button>
-              <button class="board-marker" style="--x: 63.53%; --y: 43.59%"
-                data-pcb-at="174 91.8" data-pcb-nodes="" type="button" role="tab" id="tab-board-backup"
+              <button class="board-marker" style="--x: 65.94%; --y: 43.10%"
+                data-pcb-at="176.70 91.80" data-pcb-nodes="" type="button" role="tab" id="tab-board-backup"
                 aria-label="12. 5V backup regulator footprint" aria-controls="board-backup"><span aria-hidden="true">12</span></button>
-              <button class="board-marker" style="--x: 44.43%; --y: 65.08%"
-                data-pcb-at="137.3 116.34" data-pcb-nodes="" type="button" role="tab" id="tab-board-logic-power"
+              <button class="board-marker" style="--x: 44.06%; --y: 65.82%"
+                data-pcb-at="137.30 116.34" data-pcb-nodes="" type="button" role="tab" id="tab-board-logic-power"
                 aria-label="13. 3.3V regulator footprint" aria-controls="board-logic-power"><span aria-hidden="true">13</span></button>
-              <button class="board-marker" style="--x: 57.81%; --y: 63.03%"
-                data-pcb-at="163 114" data-pcb-nodes="Q1 Q2 D1 D2" type="button" role="tab" id="tab-board-switching"
+              <button class="board-marker" style="--x: 59.00%; --y: 63.38%"
+                data-pcb-at="164.20 113.70" data-pcb-nodes="Q1 Q2 D1 D2" type="button" role="tab" id="tab-board-switching"
                 aria-label="14. Power switchover" aria-controls="board-switching"><span aria-hidden="true">14</span></button>
-              <button class="board-marker" style="--x: 64.78%; --y: 29.75%"
-                data-pcb-at="176.4 76" data-pcb-nodes="" type="button" role="tab" id="tab-board-fuse"
-                aria-label="15. Fuse footprint" aria-controls="board-fuse"><span aria-hidden="true">15</span></button>
-              <button class="board-marker" style="--x: 17.03%; --y: 87.33%"
-                data-pcb-at="84.65 141.75" data-pcb-nodes="" type="button" role="tab" id="tab-board-usb"
-                aria-label="16. Micro-USB ports" aria-controls="board-usb"><span aria-hidden="true">16</span></button>
-              <button class="board-marker" style="--x: 8.88%; --y: 38.29%"
-                data-pcb-at="69 85.75" data-pcb-nodes="SW2" type="button" role="tab" id="tab-board-buttons"
+              <button class="board-marker" style="--x: 65.83%; --y: 28.47%"
+                data-pcb-at="176.50 76.00" data-pcb-nodes="F1" type="button" role="tab" id="tab-board-fuse"
+                aria-label="15. Battery charging fuse" aria-controls="board-fuse"><span aria-hidden="true">15</span></button>
+              <button class="board-marker" style="--x: 14.81%; --y: 90.48%"
+                data-pcb-at="84.65 142.96" data-pcb-nodes="J1" type="button" role="tab" id="tab-board-usb"
+                aria-label="16. Primary USB data port" aria-controls="board-usb"><span aria-hidden="true">16</span></button>
+              <button class="board-marker" style="--x: 6.53%; --y: 34.58%"
+                data-pcb-at="69.75 82.60" data-pcb-nodes="SW2" type="button" role="tab" id="tab-board-buttons"
                 aria-label="17. Reset and boot buttons" aria-controls="board-buttons"><span aria-hidden="true">17</span></button>
+              <button class="board-marker" style="--x: 35.28%; --y: 90.48%"
+                data-pcb-at="121.50 142.96" data-pcb-nodes="J3" type="button" role="tab" id="tab-board-power-usb"
+                aria-label="18. Primary 5V input" aria-controls="board-power-usb"><span aria-hidden="true">18</span></button>
+              <button class="board-marker" style="--x: 14.81%; --y: 80.65%"
+                data-pcb-at="84.65 132.35" data-pcb-nodes="J15" type="button" role="tab" id="tab-board-usb-backup"
+                aria-label="19. Backup USB data socket" aria-controls="board-usb-backup"><span aria-hidden="true">19</span></button>
+              <button class="board-marker" style="--x: 89.17%; --y: 66.44%"
+                data-pcb-at="218.50 117.00" data-pcb-nodes="J16" type="button" role="tab" id="tab-board-power-backup"
+                aria-label="20. Backup 5V socket" aria-controls="board-power-backup"><span aria-hidden="true">20</span></button>
+              <button class="board-marker" style="--x: 12.06%; --y: 36.62%"
+                data-pcb-at="79.71 84.80" data-pcb-nodes="J17" type="button" role="tab" id="tab-board-uart"
+                aria-label="21. UART recovery header" aria-controls="board-uart"><span aria-hidden="true">21</span></button>
+              <button class="board-marker" style="--x: 17.24%; --y: 71.18%"
+                data-pcb-at="89.04 122.12" data-pcb-nodes="J18" type="button" role="tab" id="tab-board-esp-isolation"
+                aria-label="22. ESP32-S3 power shunt" aria-controls="board-esp-isolation"><span aria-hidden="true">22</span></button>
+              <button class="board-marker" style="--x: 77.06%; --y: 52.08%"
+                data-pcb-at="196.70 101.50" data-pcb-nodes="D4" type="button" role="tab" id="tab-board-indicators"
+                aria-label="23. Diagnostic LEDs" aria-controls="board-indicators"><span aria-hidden="true">23</span></button>
             </div>
           </div>
           <div class="board-component-details">
@@ -187,16 +205,40 @@
                 <p>The MOSFET stage controls the battery path. The two 1N5822 Schottky diodes isolate the 5V power paths.</p>
               </div>
               <div class="board-detail" id="board-fuse" aria-labelledby="tab-board-fuse">
-                <h3>F1 · Fuse footprint</h3>
-                <p>The fuse footprint sits in the battery charging section near the charger module.</p>
+                <h3>F1 · Battery charging fuse</h3>
+                <p>This fuse sits in the battery charging section near the charger module.</p>
               </div>
               <div class="board-detail" id="board-usb" aria-labelledby="tab-board-usb">
-                <h3>J1, J3 · Micro-USB ports</h3>
-                <p>The two bottom-edge ports serve separate roles. J1 is for USB data and J3 is the 5V power input.</p>
+                <h3>J1 · Primary USB data port</h3>
+                <p>This bottom-edge Micro-B receptacle carries native USB data to the ESP32-S3.</p>
               </div>
               <div class="board-detail" id="board-buttons" aria-labelledby="tab-board-buttons">
                 <h3>SW1, SW2 · Reset and boot buttons</h3>
                 <p>SW1 resets the ESP32-S3. SW2 sets its boot mode for firmware loading.</p>
+              </div>
+              <div class="board-detail" id="board-power-usb" aria-labelledby="tab-board-power-usb">
+                <h3>J3 · Primary 5V input</h3>
+                <p>This Micro-B receptacle supplies the external 5V rail. The external rail powers the relay interface and three of the seven sensor inputs.</p>
+              </div>
+              <div class="board-detail" id="board-usb-backup" aria-labelledby="tab-board-usb-backup">
+                <h3>J15 · Backup USB data socket</h3>
+                <p>This socket accepts a USB breakout for native ESP32-S3 data. The primary J1 data path can be isolated using its two 0Ω links.</p>
+              </div>
+              <div class="board-detail" id="board-power-backup" aria-labelledby="tab-board-power-backup">
+                <h3>J16 · Backup 5V socket</h3>
+                <p>This socket accepts a 5V power breakout. The primary J3 input can be isolated using its 0Ω link.</p>
+              </div>
+              <div class="board-detail" id="board-uart" aria-labelledby="tab-board-uart">
+                <h3>J17 · UART recovery header</h3>
+                <p>This header exposes the ESP32-S3’s 3.3V UART for ROM-loader programming and diagnostics.</p>
+              </div>
+              <div class="board-detail" id="board-esp-isolation" aria-labelledby="tab-board-esp-isolation">
+                <h3>J18 · ESP32-S3 power shunt</h3>
+                <p>The shunt connects the ESP32-S3 to the board’s 3.3V rail for normal operation. Opening it isolates the ESP32-S3 supply for bench programming.</p>
+              </div>
+              <div class="board-detail" id="board-indicators" aria-labelledby="tab-board-indicators">
+                <h3>D3–D7 · Diagnostic LEDs</h3>
+                <p>D3 indicates external 5V, D4 indicates battery 5V, D5 indicates the selected input supply, D6 indicates the ESP32-S3’s 3.3V rail, and D7 shows firmware activity.</p>
               </div>
             </div>
           </div>
