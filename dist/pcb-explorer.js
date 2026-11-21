@@ -45,8 +45,8 @@
     canvasHost.hidden = !enabled;
     reset.hidden = !enabled;
     mode.setAttribute("aria-pressed", String(enabled));
-    mode.textContent = enabled ? "Back to top view" : "View in 3D";
-    instructions.textContent = enabled ? "Drag to rotate · Pinch or scroll to zoom" : "Choose a numbered circle";
+    mode.textContent = "3D view";
+    instructions.textContent = enabled ? "Drag or use arrow keys to rotate. Pinch, scroll, or use + and − to zoom." : "Select a marker or choose a component below";
     if (enabled) {
       viewer?.resize();
     } else {
@@ -68,7 +68,8 @@
       changeView(true);
       return;
     }
-    mode.disabled = true;
+    if (mode.getAttribute("aria-busy") === "true") return;
+    mode.setAttribute("aria-busy", "true");
     mode.textContent = "Loading 3D…";
     try {
       viewer = await window.createPortfolioPcbViewer(canvasHost, markers);
@@ -78,7 +79,7 @@
       message.textContent = "3D preview is unavailable on this device. The top view and component details are available.";
       message.hidden = false;
     } finally {
-      mode.disabled = false;
+      mode.removeAttribute("aria-busy");
     }
   });
 
