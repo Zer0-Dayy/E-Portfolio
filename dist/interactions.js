@@ -30,7 +30,7 @@ function setUpTabs(group) {
     }
 
     if (playButton) {
-      tabList.style.setProperty("--flow-fill", (100 * index / tabs.length) + "%");
+      tabList.style.setProperty("--flow-progress", String(index / Math.max(1, lastIndex)));
       status.textContent = announce ? "Step " + (index + 1) + " of " + tabs.length + ". " + tabs[index].textContent : "";
       updatePlayButton();
     }
@@ -76,7 +76,10 @@ function setUpTabs(group) {
   // Only the two process diagrams have timed playback.
   if (playButton) {
     tabList.style.setProperty("--step-count", tabs.length);
-    tabList.addEventListener("focusin", stopPlayback);
+    group.addEventListener("focusin", (event) => {
+      if (event.target !== playButton) stopPlayback();
+    });
+    window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", stopPlayback);
     window.addEventListener("hashchange", stopPlayback);
     window.addEventListener("pagehide", stopPlayback);
     document.addEventListener("visibilitychange", () => {
@@ -143,14 +146,12 @@ function setUpProjectIndex(nav) {
   const select = picker.querySelector("select");
   for (const link of links) select.add(new Option(link.querySelector("strong").textContent, link.hash));
   picker.hidden = false;
-  select.addEventListener("change", () => {
-    if (location.hash !== select.value) {
-      location.hash = select.value;
-    } else {
-      const section = document.getElementById(select.value.slice(1));
-      section.focus({ preventScroll: true });
-      section.scrollIntoView();
-    }
+  picker.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const section = document.getElementById(select.value.slice(1));
+    if (location.hash !== select.value) location.hash = select.value;
+    section.focus({ preventScroll: true });
+    section.scrollIntoView();
   });
 
   let pending = false;
@@ -170,7 +171,7 @@ function setUpProjectIndex(nav) {
       if (i === active) link.setAttribute("aria-current", "location");
       else link.removeAttribute("aria-current");
     }
-    select.value = links[active].hash;
+    if (!picker.contains(document.activeElement)) select.value = links[active].hash;
   }
   function schedule() {
     if (pending) return;
@@ -190,3 +191,13 @@ for (const button of document.querySelectorAll("[data-print-cv]")) {
   button.hidden = false;
   button.addEventListener("click", () => window.print());
 }
+
+// Preserve links to the original component explorer after moving it into a disclosure.
+function revealBoardReference() {
+  if (location.hash === "#pcb-explorer") {
+    const reference = document.getElementById("pcb-explorer");
+    if (reference) reference.open = true;
+  }
+}
+window.addEventListener("hashchange", revealBoardReference);
+revealBoardReference();

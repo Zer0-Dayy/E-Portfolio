@@ -4,7 +4,7 @@ The root `index.html` is the standalone GitHub Pages entry point. Open it in a b
 
 | Path | What to edit |
 | --- | --- |
-| `dist/index.html` | About cover, portrait, copper-layer comparison, three “How I work” stories, and open-source link |
+| `dist/index.html` | About cover, portrait, copper-layer comparison, three engineering practice examples, and open-source link |
 | `dist/projects.html` | Project index, case studies, PCB markers, DropLock photo callouts, process diagrams, and driver directory |
 | `dist/cv.html` | Internship, education, project highlights, skills, languages, and contact |
 | `dist/styles.css` | Colors and type at the top, followed by shared UI, About, Projects, CV, responsive layouts, and print |
@@ -24,9 +24,11 @@ The About stories, PCB markers, and process diagrams use the same tab controller
 
 The About cover and circuit-design story use the actual front and back routing from the hydroponics PCB. Both plots are viewed from above, with filled zones omitted to expose the tracks. The native radio controls change layers in CSS. To update the artwork, plot the front copper and Edge.Cuts to one colour SVG and the back copper and Edge.Cuts to another from the same board origin. Use actual drill marks, the same page size, and a copy with unfilled zones. With Pillow and PyMuPDF installed, run `python3 tools/render_copper.py front.svg back.svg dist/assets`.
 
-The Projects index links each title to the matching case-study ID. The mobile menu and highlighted project come from those same links. Each DropLock step defines its photo label in `data-part` and its target in `data-x` and `data-y`, as percentages of the whole photograph. The marker moves when a visitor selects a stage or plays the sequence. Playback gives longer explanations more reading time and pauses when the diagram leaves the viewport.
+The Projects index links each title to the matching case-study ID. The mobile project picker, Go button, and highlighted project come from those same links. Each DropLock step defines its photo label in `data-part` and its target in `data-x` and `data-y`, as percentages of the whole photograph. The marker moves when a visitor selects a stage or plays the sequence. Playback gives longer explanations more reading time and pauses when the diagram leaves the viewport.
 
 The PCB view uses numbered markers in `projects.html`. Each marker defines two positions. The `--x` and `--y` CSS values are percentages of the **cropped** top view. For 3D, `data-pcb-nodes` names components by KiCad reference and the viewer uses their exported bounds. `data-pcb-at` supplies the two board coordinates in millimeters for footprints without a mesh. Update both positions if the board layout changes. The driver directory uses native HTML `details` elements. Each contains its own description, guide link, and example link.
+
+The Rev 1.8 service map is cropped from the [published port and LED map](https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/blob/3e248f5aeab8a3866d7c6e234ebc43bf2f8ab32a/PCB%20Design/Documentation/Port%20And%20LED%20Map.pdf). The copper comparison uses front and back plots from that same revision. The expandable component explorer preserves the earlier layout and its original marker coordinates.
 
 The 3D view was derived from the public [KiCad board design](https://github.com/Zer0-Dayy/Hydroponics-Monitoring-System/tree/main/PCB%20Design/Hardware), with the original footprints and component placements, board outline, pads, and board lettering. The web export depicts footprints for the daughter modules, fuse, and USB connectors when their component models are unavailable. The KiCad libraries and Three.js license notices are in `dist/assets/`.
 
