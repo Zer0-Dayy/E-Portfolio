@@ -191,3 +191,22 @@ for (const button of document.querySelectorAll("[data-print-cv]")) {
   button.hidden = false;
   button.addEventListener("click", () => window.print());
 }
+
+// External destinations may refuse to load inside a host site's embed.
+if (window.self !== window.top) {
+  for (const link of document.querySelectorAll('a[href^="https://"], a[href^="http://"]')) {
+    if (link.origin === location.origin) continue;
+    link.target = "_blank";
+    link.relList.add("noopener");
+
+    const label = link.getAttribute("aria-label");
+    if (label) {
+      link.setAttribute("aria-label", label + " (opens in a new tab)");
+    } else {
+      const notice = document.createElement("span");
+      notice.className = "sr-only";
+      notice.textContent = " (opens in a new tab)";
+      link.append(notice);
+    }
+  }
+}
