@@ -176,21 +176,20 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   gap: 0.65rem;
   font-size: 0.95rem;
   font-weight: 600;
-  white-space: nowrap;
+  line-height: 1.15;
 }
 
 .wordmark-icon {
   display: grid;
+  flex: none;
   width: 2.4rem;
   height: 2.35rem;
   place-items: center;
   border: 1px solid #527162;
   border-radius: 0.9rem 0.2rem 0.9rem 0.2rem;
   background: var(--cover);
-  color: #ffdab2;
-  font: italic 400 1.08rem / 1 var(--serif);
-  letter-spacing: -0.12em;
-  padding-right: 0.14em;
+  color: var(--foil);
+  font: italic 400 1.35rem / 1 var(--serif);
 }
 
 .site-nav, .footer-links {
@@ -1777,7 +1776,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
     width: 1.9rem;
     height: 1.9rem;
     border-radius: 0.7rem 0.15rem 0.7rem 0.15rem;
-    font-size: 0.98rem;
+    font-size: 1.12rem;
   }
 
   .site-nav a::after { left: 0.42rem; right: 0.42rem; }
@@ -1881,10 +1880,6 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   .practice-tabs button { padding-inline: 0.29rem; }
   .about-kicker { gap: 0; }
   .about-kicker > :not(:last-child) { display: none; }
-  .wordmark > span:last-child {
-    white-space: normal;
-    line-height: 1.1;
-  }
 
   .driver-directory summary {
     grid-template-columns: minmax(0, 1fr) 0.6rem;
