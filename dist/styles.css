@@ -612,7 +612,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   object-position: center 62%;
 }
 
-/* Both copper plots share a fixed crop and a top-down coordinate system. */
+/* The plots share a fixed crop. The back layer is flipped to show its own side. */
 .copper-table {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -667,12 +667,14 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   transition: opacity 300ms ease, clip-path 440ms cubic-bezier(.22,.75,.25,1);
 }
 .copper-layer--front { background: #f4c08b; mask: var(--front-art) center / 100% 100% no-repeat; }
-.copper-layer--back { background: #b2e2cd; mask: var(--back-art) center / 100% 100% no-repeat; clip-path: inset(0 100% 0 0); opacity: 0; }
+.copper-layer--back { background: #b2e2cd; mask: var(--back-art) center / 100% 100% no-repeat; transform: scaleX(-1); clip-path: inset(0 0 0 100%); opacity: 0; }
 .copper-table:has(input[value="back"]:checked) .copper-layer--front { opacity: 0; }
 .copper-table:has(input[value="back"]:checked) .copper-layer--back { opacity: 1; clip-path: inset(0); }
 .copper-caption { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; }
-.copper-caption > span:not(.foil-key) { color: #a2b4a7; }
-.foil-key { width: 1.2rem; height: 2px; background: #f4c08b; }
+.copper-caption-separator { color: #a2b4a7; }
+.copper-view--back, .copper-table:has(input[value="back"]:checked) .copper-view--front { display: none; }
+.copper-table:has(input[value="back"]:checked) .copper-view--back { display: inline; }
+.foil-key { flex: 0 0 1.2rem; height: 2px; background: #f4c08b; }
 .copper-table:has(input[value="back"]:checked) .foil-key { background: #b2e2cd; }
 
 .story-copy {

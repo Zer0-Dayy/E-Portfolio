@@ -45,7 +45,7 @@
         </div>
         <div class="portrait-mount">
           <div class="portrait-paper">
-            <img src="assets/aziz-portrait.webp" width="1000" height="1000" alt="Portrait of Mohamed Aziz Missaoui" fetchpriority="high">
+            <img src="assets/aziz-portrait.webp" width="1086" height="1448" alt="Portrait of Mohamed Aziz Missaoui" fetchpriority="high">
           </div>
           <a class="bench-note" href="projects.html#pcb-revision">
             <span class="bench-art" aria-hidden="true"></span>
@@ -68,17 +68,24 @@
         <article class="practice-story practice-story--circuits" id="practice-circuits" aria-labelledby="tab-practice-circuits">
           <div class="copper-table">
             <fieldset class="copper-switch">
-              <legend class="sr-only">Hydroponics PCB copper layer, viewed from above</legend>
+              <legend class="sr-only">Hydroponics PCB copper layer</legend>
               <label><input type="radio" name="copper-layer" value="front" checked><span>Front copper</span></label>
               <label><input type="radio" name="copper-layer" value="back"><span>Back copper</span></label>
             </fieldset>
-            <div class="copper-window" role="img" aria-label="Routed tracks, pads, and vias on the hydroponics PCB. Both layers share the same top-down view.">
+            <div class="copper-window" role="img" aria-label="Routed tracks, pads, and vias on the hydroponics PCB" aria-describedby="copper-caption">
               <div class="copper-board" aria-hidden="true">
                 <span class="copper-layer copper-layer--front"></span>
                 <span class="copper-layer copper-layer--back"></span>
               </div>
             </div>
-            <p class="copper-caption"><span class="foil-key" aria-hidden="true"></span>Rev 1.8 routing <span aria-hidden="true">/</span> viewed from above</p>
+            <p class="copper-caption" id="copper-caption">
+              <span class="foil-key" aria-hidden="true"></span>
+              <span>
+                Rev 1.8 <span class="copper-caption-separator" aria-hidden="true">/</span>
+                <span class="copper-view--front">Copper traces viewed from the front</span>
+                <span class="copper-view--back">Copper traces viewed from the back</span>
+              </span>
+            </p>
           </div>
           <div class="story-copy">
             <p class="eyebrow">Hydroponics Monitoring</p>
