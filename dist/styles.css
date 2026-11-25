@@ -1495,11 +1495,11 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 
 .cv-heading h1 {
   margin-top: 0.55rem;
-  color: var(--gold);
+  color: black;
   font-size: clamp(2.75rem, 5.8vw, 5.1rem);
 }
 
-.cv-heading h1 em { font-weight: 400; }
+.cv-heading h1 em { color: var(--gold); font-weight: 400; }
 .cv-role {
   margin-top: 0.75rem;
   color: var(--muted);
