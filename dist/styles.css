@@ -40,9 +40,10 @@
   --green: #2b5042;
   --green-deep: #18392f;
   --sage: #e6ebdf;
-  --rust: #98472e;
+  --gold: #89620d;
+  --gold-light: #efc86e;
+  --gold-tint: #f3ecd7;
   --line: #d7dacf;
-  --foil: #f1be8c;
   --cover: #18372f;
   --front-art: url("assets/copper-front.webp");
   --back-art: url("assets/copper-back.webp");
@@ -110,7 +111,7 @@ strong {
 }
 
 :focus-visible {
-  outline: 3px solid var(--rust);
+  outline: 3px solid var(--gold);
   outline-offset: 4px;
 }
 
@@ -188,7 +189,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   border: 1px solid #527162;
   border-radius: 0.9rem 0.2rem 0.9rem 0.2rem;
   background: var(--cover);
-  color: var(--foil);
+  color: var(--gold-light);
   font: italic 400 1.35rem / 1 var(--serif);
 }
 
@@ -220,7 +221,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   bottom: 0.28rem;
   left: 0.88rem;
   height: 2px;
-  background: var(--rust);
+  background: var(--gold);
   content: "";
   transform: scaleX(0);
   transform-origin: left;
@@ -357,7 +358,18 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 }
 
 .footer-links a:focus-visible {
-  outline-color: #f3c2a9;
+  outline-color: var(--gold-light);
+}
+
+.footer-inner:has(+ .ai-use-declaration) {
+  padding-bottom: 1rem;
+}
+
+.ai-use-declaration {
+  padding-bottom: 1.25rem;
+  color: #dce4d8;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 /* About cover and the print made from the controller's actual copper routes */
@@ -407,7 +419,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   text-transform: uppercase;
 }
 
-.about-kicker i { width: 2rem; height: 1px; background: var(--foil); }
+.about-kicker i { width: 2rem; height: 1px; background: var(--gold-light); }
 
 .hero-name {
   margin-top: 0.82rem;
@@ -419,7 +431,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 .hero-name em {
   display: block;
   margin-top: 0.035em;
-  color: var(--foil);
+  color: var(--gold-light);
   font-weight: 400;
 }
 
@@ -434,11 +446,11 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.35rem; }
-.cover .button-primary { background: #f4e9d4; color: #19362c; }
-.cover .button-primary:hover { background: #fff7e7; }
+.cover .button-primary { background: var(--gold-light); color: var(--green-deep); }
+.cover .button-primary:hover { background: var(--gold-tint); }
 .cover .button-quiet { border-color: #839a88; color: #fbf7e9; }
 .cover .button-quiet:hover { background: #355448; }
-.cover :focus-visible, .copper-table :focus-visible { outline-color: #ffcd92; }
+.cover :focus-visible, .copper-table :focus-visible { outline-color: var(--gold-light); }
 
 .portrait-mount {
   position: relative;
@@ -489,7 +501,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   content: "";
   width: 77%;
   height: 82%;
-  background: #ffd39e;
+  background: var(--gold-light);
   mask: var(--front-art) center / contain no-repeat;
 }
 .bench-caption { display: grid; gap: 0.15rem; padding: 0.45rem 0.32rem 0.36rem; }
@@ -553,7 +565,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   position: absolute;
   inset: auto 0 -1px;
   height: 2px;
-  background: var(--rust);
+  background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
   content: "";
@@ -580,8 +592,8 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 }
 
 .practice-story--circuits { background: #f2f0e4; }
-.practice-story--firmware { background: #eaf0f3; }
-.practice-story--team { background: #f1ecf5; }
+.practice-story--firmware { background: var(--sage); }
+.practice-story--team { background: var(--gold-tint); }
 
 .story-image {
   position: relative;
@@ -645,7 +657,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   border-radius: 0.2rem;
   font: 600 0.875rem / 1.1 var(--sans);
 }
-.copper-switch input:checked + span { background: #ead1ae; color: #20382e; }
+.copper-switch input:checked + span { background: var(--gold-light); color: var(--green-deep); }
 .copper-switch input[value="back"]:checked + span { background: #bcdfd0; }
 .copper-switch input:focus-visible + span { outline: 2px solid white; outline-offset: -3px; box-shadow: inset 0 0 0 5px #355344; }
 .copper-window { width: 100%; align-self: center; justify-self: center; }
@@ -665,7 +677,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   inset: 0;
   transition: opacity 300ms ease, clip-path 440ms cubic-bezier(.22,.75,.25,1);
 }
-.copper-layer--front { background: #f4c08b; mask: var(--front-art) center / 100% 100% no-repeat; }
+.copper-layer--front { background: var(--gold-light); mask: var(--front-art) center / 100% 100% no-repeat; }
 .copper-layer--back { background: #b2e2cd; mask: var(--back-art) center / 100% 100% no-repeat; transform: scaleX(-1); clip-path: inset(0 0 0 100%); opacity: 0; }
 .copper-table:has(input[value="back"]:checked) .copper-layer--front { opacity: 0; }
 .copper-table:has(input[value="back"]:checked) .copper-layer--back { opacity: 1; clip-path: inset(0); }
@@ -673,7 +685,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 .copper-caption-separator { color: #a2b4a7; }
 .copper-view--back, .copper-table:has(input[value="back"]:checked) .copper-view--front { display: none; }
 .copper-table:has(input[value="back"]:checked) .copper-view--back { display: inline; }
-.foil-key { flex: 0 0 1.2rem; height: 2px; background: #f4c08b; }
+.foil-key { flex: 0 0 1.2rem; height: 2px; background: var(--gold-light); }
 .copper-table:has(input[value="back"]:checked) .foil-key { background: #b2e2cd; }
 
 .story-copy {
@@ -798,7 +810,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   position: absolute;
   inset: auto 0 -1px;
   height: 3px;
-  background: var(--rust);
+  background: var(--gold);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 225ms ease;
@@ -832,16 +844,16 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 }
 
 .case-study--locker {
-  --case-background: #f2edf6;
-  --case-line: #e0d7e8;
-  --case-accent: #624779;
-  --case-tint: #eee6f6;
+  --case-background: #f5efdd;
+  --case-line: #dfd2ae;
+  --case-accent: var(--gold);
+  --case-tint: var(--gold-tint);
 }
 
 .case-study--rover {
-  --case-background: #edf0f2;
-  --case-line: #d6dce3;
-  --case-accent: #3f546c;
+  --case-background: #eef1e5;
+  --case-line: #d7dfcc;
+  --case-accent: var(--green);
 }
 
 .case-layout {
@@ -926,7 +938,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   position: relative;
   overflow: hidden;
   aspect-ratio: 2 / 1;
-  background: #f8f6f7;
+  background: var(--surface);
 }
 .locker-image-plane {
   position: absolute;
@@ -943,8 +955,8 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   place-items: center;
   border: 2px solid #fff9ef;
   border-radius: 50%;
-  background: #703e56;
-  box-shadow: 0 0 0 2px #492d43ad;
+  background: var(--case-accent);
+  box-shadow: 0 0 0 2px #18392fad;
   transform: translate(-50%, -50%);
   transition: left 410ms cubic-bezier(.2,.75,.25,1), top 410ms cubic-bezier(.2,.75,.25,1);
   pointer-events: none;
@@ -955,7 +967,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   left: 50%;
   padding: 0.25rem 0.48rem;
   border-radius: 0.2rem;
-  background: #432e40;
+  background: var(--green-deep);
   color: white;
   white-space: nowrap;
   font: 600 0.8rem / 1.35 var(--sans);
@@ -972,7 +984,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   bottom: 100%;
   height: 0.5rem;
   width: 2px;
-  background: #432e40;
+  background: var(--green-deep);
 }
 
 @media (min-width: 53.01rem) {
@@ -1483,10 +1495,11 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
 
 .cv-heading h1 {
   margin-top: 0.55rem;
+  color: var(--gold);
   font-size: clamp(2.75rem, 5.8vw, 5.1rem);
 }
 
-.cv-heading h1 em { color: var(--rust); font-weight: 400; }
+.cv-heading h1 em { font-weight: 400; }
 .cv-role {
   margin-top: 0.75rem;
   color: var(--muted);
@@ -1542,7 +1555,7 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   width: 0.42rem;
   height: 0.42rem;
   border-radius: 50%;
-  background: var(--rust);
+  background: var(--gold);
 }
 .cv-entry + .cv-entry {
   margin-top: 1.15rem;
@@ -1926,7 +1939,6 @@ main:focus, .case-study:focus, #other-work:focus, .lockx-card:focus, .cv-section
   .cv-page { padding-bottom: 0; }
   .cv-heading { display: block; padding: 0 0 8pt; }
   .cv-heading h1 { font-size: 27pt; }
-  .cv-heading h1 em { color: black; }
   .cv-entry { padding-inline-start: 0; border-inline-start: none; }
   .cv-entry::before { display: none; }
   .cv-role { margin-top: 3pt; font-size: 9pt; }
